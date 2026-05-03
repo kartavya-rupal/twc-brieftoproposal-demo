@@ -1,0 +1,159 @@
+{
+    "version": "1.0",
+    "last_updated": "2026-05-03",
+    "description": "Prompt and response templates for proposal generation demo.",
+    "templates": [
+        {
+            "id": "p001",
+            "name": "Venue Proposal Draft",
+            "use_case": "Generate a first-draft venue proposal from a structured wedding brief.",
+            "system_prompt": "You are a wedding planning assistant for a concierge-style marketplace. Convert structured wedding requirements into a concise, practical proposal draft. Do not invent final prices. Use the brief and selected venues to explain fit, tradeoffs, and next steps. Keep the tone warm, professional, and helpful.",
+            "sections": [
+                "Client summary",
+                "Event requirements",
+                "Recommended venue shortlist",
+                "Why these venues fit",
+                "Budget fit summary",
+                "Tradeoffs / watchouts",
+                "Follow-up questions",
+                "Next steps"
+            ],
+            "output_format": {
+                "client_summary": "string",
+                "requirements_summary": "string",
+                "recommended_venues": [
+                    {
+                        "venue_id": "string",
+                        "venue_name": "string",
+                        "fit_score": "number",
+                        "reason": "string"
+                    }
+                ],
+                "budget_split_suggestion": {
+                    "venue": "string",
+                    "decor": "string",
+                    "food": "string",
+                    "photo_video": "string",
+                    "misc": "string"
+                },
+                "tradeoffs": [
+                    "string"
+                ],
+                "follow_up_questions": [
+                    "string"
+                ],
+                "whatsapp_summary": "string",
+                "proposal_copy": "string"
+            }
+        },
+        {
+            "id": "p002",
+            "name": "Good Better Best Proposal",
+            "use_case": "Generate tiered package options from a structured wedding brief.",
+            "system_prompt": "You are helping a wedding sales team create a Good/Better/Best proposal. Keep it practical and non-fabricated. Compare tiers by experience, budget fit, and convenience. Avoid pretending to know exact vendor prices unless provided.",
+            "sections": [
+                "Good option",
+                "Better option",
+                "Best option",
+                "Why the tiers differ",
+                "Best-fit recommendation",
+                "Client follow-up"
+            ],
+            "output_format": {
+                "good": {
+                    "title": "string",
+                    "summary": "string",
+                    "best_for": "string"
+                },
+                "better": {
+                    "title": "string",
+                    "summary": "string",
+                    "best_for": "string"
+                },
+                "best": {
+                    "title": "string",
+                    "summary": "string",
+                    "best_for": "string"
+                },
+                "recommendation": "string",
+                "follow_up_questions": [
+                    "string"
+                ]
+            }
+        },
+        {
+            "id": "p003",
+            "name": "Requirement Extraction",
+            "use_case": "Extract structured wedding requirements from a messy message.",
+            "system_prompt": "You are a precise information extraction assistant. Convert a messy wedding inquiry into structured JSON. If a field is not present, set it to null. Also identify missing questions that would help move to a proposal. Do not hallucinate.",
+            "output_format": {
+                "event_type": "string_or_null",
+                "city": "string_or_null",
+                "date": "string_or_null",
+                "guest_count": "number_or_null",
+                "budget_inr": "number_or_null",
+                "style": "string_or_null",
+                "events_count": "number_or_null",
+                "service_need": [
+                    "string"
+                ],
+                "must_haves": [
+                    "string"
+                ],
+                "deal_breakers": [
+                    "string"
+                ],
+                "urgency": "low_medium_high",
+                "lead_type": "venue_only_decor_only_photography_only_full_planning_other",
+                "confidence": {
+                    "city": "number",
+                    "date": "number",
+                    "guest_count": "number",
+                    "budget": "number",
+                    "style": "number"
+                },
+                "missing_questions": [
+                    "string"
+                ]
+            }
+        },
+        {
+            "id": "p004",
+            "name": "Venue Shortlist Explanation",
+            "use_case": "Explain why each venue was recommended.",
+            "system_prompt": "You are a concise wedding venue recommendation assistant. Explain the shortlist in a way a client can understand. Be transparent about fit, tradeoffs, and budget alignment. Do not overstate certainty.",
+            "output_format": {
+                "explanations": [
+                    {
+                        "venue_id": "string",
+                        "venue_name": "string",
+                        "why_it_fits": "string",
+                        "possible_issue": "string_or_null"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "p005",
+            "name": "Missing Questions Follow-up",
+            "use_case": "Ask only the missing questions needed before a proposal can be generated.",
+            "system_prompt": "You are a smart lead qualification assistant. Ask only the minimum number of missing questions needed to create a useful proposal. Keep questions short and grouped logically.",
+            "output_format": {
+                "questions": [
+                    "string"
+                ],
+                "category": "string",
+                "reason": "string"
+            }
+        },
+        {
+            "id": "p006",
+            "name": "WhatsApp Summary",
+            "use_case": "Produce a short client-ready summary for WhatsApp or SMS.",
+            "system_prompt": "You are a concise wedding planning assistant. Summarize the lead and recommendation in a short, friendly, client-ready message suitable for WhatsApp.",
+            "output_format": {
+                "message": "string"
+            }
+        }
+    ]
+}

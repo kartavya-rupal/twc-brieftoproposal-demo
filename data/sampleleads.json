@@ -1,0 +1,255 @@
+{
+    "version": "1.0",
+    "last_updated": "2026-05-03",
+    "description": "Sample messy leads and normalized outputs for lead capture and requirement understanding demo.",
+    "leads": [
+        {
+            "id": "l001",
+            "channel": "whatsapp",
+            "raw_message": "Need wedding in Feb end, Delhi or nearby, around 250 guests, budget under 18L. Want a palace-ish vibe, venue + decor mostly, maybe 2 events. Not sure about exact dates yet.",
+            "source": "website_chat",
+            "normalized": {
+                "event_type": "wedding",
+                "city": "Delhi",
+                "location_flexibility": "Delhi or nearby",
+                "date_window": "Feb end",
+                "guest_count": 250,
+                "budget_inr": 1800000,
+                "style": "palace-ish",
+                "events_count": 2,
+                "service_need": [
+                    "venue",
+                    "decor"
+                ],
+                "planning_stage": "early",
+                "must_haves": [],
+                "deal_breakers": [],
+                "urgency": "medium",
+                "lead_type": "full_planning",
+                "confidence": {
+                    "city": 0.92,
+                    "date": 0.66,
+                    "guest_count": 0.98,
+                    "budget": 0.95,
+                    "style": 0.78,
+                    "events_count": 0.72
+                }
+            },
+            "missing_questions": [
+                "Exact event date",
+                "Exact venue preferences",
+                "Food preference",
+                "Accommodation requirement",
+                "Must-have / deal-breaker details"
+            ]
+        },
+        {
+            "id": "l002",
+            "channel": "website_form",
+            "raw_message": "Looking for engagement venue for 120 people in Noida. Budget is flexible but ideally around 8-10 lakhs. Prefer indoor hall, modern look, parking needed.",
+            "source": "proposal_form",
+            "normalized": {
+                "event_type": "engagement",
+                "city": "Noida",
+                "location_flexibility": "Noida",
+                "date_window": null,
+                "guest_count": 120,
+                "budget_inr": 1000000,
+                "style": "modern",
+                "events_count": 1,
+                "service_need": [
+                    "venue"
+                ],
+                "planning_stage": "mid",
+                "must_haves": [
+                    "indoor hall",
+                    "parking"
+                ],
+                "deal_breakers": [],
+                "urgency": "medium",
+                "lead_type": "venue_only",
+                "confidence": {
+                    "city": 0.99,
+                    "date": 0.2,
+                    "guest_count": 0.96,
+                    "budget": 0.84,
+                    "style": 0.88,
+                    "events_count": 0.91
+                }
+            },
+            "missing_questions": [
+                "Exact date",
+                "Preferred food/catering style",
+                "Whether decor is needed",
+                "Flexibility on budget"
+            ]
+        },
+        {
+            "id": "l003",
+            "channel": "instagram_dm",
+            "raw_message": "We are planning a destination wedding in Jaipur next winter. Around 400 guests. Want something premium but not ultra crazy. Need help with venue, decor and logistics.",
+            "source": "social",
+            "normalized": {
+                "event_type": "wedding",
+                "city": "Jaipur",
+                "location_flexibility": "Jaipur",
+                "date_window": "next winter",
+                "guest_count": 400,
+                "budget_inr": null,
+                "style": "premium",
+                "events_count": null,
+                "service_need": [
+                    "venue",
+                    "decor",
+                    "logistics"
+                ],
+                "planning_stage": "early",
+                "must_haves": [
+                    "destination wedding"
+                ],
+                "deal_breakers": [],
+                "urgency": "high",
+                "lead_type": "full_planning",
+                "confidence": {
+                    "city": 0.98,
+                    "date": 0.58,
+                    "guest_count": 0.99,
+                    "budget": 0.22,
+                    "style": 0.81,
+                    "events_count": 0.41
+                }
+            },
+            "missing_questions": [
+                "Exact budget",
+                "Exact month/date",
+                "Number of events",
+                "Catering preference",
+                "Accommodation requirement"
+            ]
+        },
+        {
+            "id": "l004",
+            "channel": "web_chat",
+            "raw_message": "Only need decor for a mehendi in Gurugram. Around 80-100 guests. Budget for decor around 2L. Want colorful but elegant. Venue already fixed.",
+            "source": "support_chat",
+            "normalized": {
+                "event_type": "mehendi",
+                "city": "Gurugram",
+                "location_flexibility": "Gurugram",
+                "date_window": null,
+                "guest_count": 100,
+                "budget_inr": 200000,
+                "style": "colorful elegant",
+                "events_count": 1,
+                "service_need": [
+                    "decor"
+                ],
+                "planning_stage": "late",
+                "must_haves": [
+                    "venue already fixed"
+                ],
+                "deal_breakers": [],
+                "urgency": "high",
+                "lead_type": "decor_only",
+                "confidence": {
+                    "city": 0.97,
+                    "date": 0.15,
+                    "guest_count": 0.82,
+                    "budget": 0.94,
+                    "style": 0.89,
+                    "events_count": 0.9
+                }
+            },
+            "missing_questions": [
+                "Exact date",
+                "Theme references / inspiration links",
+                "Any floral preferences",
+                "Do you need stage / entry / seating setup?"
+            ]
+        },
+        {
+            "id": "l005",
+            "channel": "call_notes",
+            "raw_message": "Client wants a wedding in Faridabad, 300 guests, budget 25L, looking for good value, wants 3 events, likes traditional style, needs lodging for family, and will decide venue in a week.",
+            "source": "sales_call",
+            "normalized": {
+                "event_type": "wedding",
+                "city": "Faridabad",
+                "location_flexibility": "Faridabad",
+                "date_window": null,
+                "guest_count": 300,
+                "budget_inr": 2500000,
+                "style": "traditional",
+                "events_count": 3,
+                "service_need": [
+                    "venue",
+                    "lodging",
+                    "planning"
+                ],
+                "planning_stage": "mid",
+                "must_haves": [
+                    "family lodging",
+                    "good value"
+                ],
+                "deal_breakers": [],
+                "urgency": "high",
+                "lead_type": "full_planning",
+                "confidence": {
+                    "city": 0.99,
+                    "date": 0.2,
+                    "guest_count": 0.98,
+                    "budget": 0.96,
+                    "style": 0.91,
+                    "events_count": 0.95
+                }
+            },
+            "missing_questions": [
+                "Exact date",
+                "Venue style preference in more detail",
+                "Food preference",
+                "Budget split across events"
+            ]
+        },
+        {
+            "id": "l006",
+            "channel": "email",
+            "raw_message": "Hi, we need a reception in Delhi NCR, 180 guests, budget around 12L. Open to indoor or outdoor, but location should be easy for elderly guests.",
+            "source": "inbound_email",
+            "normalized": {
+                "event_type": "reception",
+                "city": "Delhi NCR",
+                "location_flexibility": "Delhi NCR",
+                "date_window": null,
+                "guest_count": 180,
+                "budget_inr": 1200000,
+                "style": null,
+                "events_count": 1,
+                "service_need": [
+                    "venue"
+                ],
+                "planning_stage": "early",
+                "must_haves": [
+                    "easy access for elderly guests"
+                ],
+                "deal_breakers": [],
+                "urgency": "medium",
+                "lead_type": "venue_only",
+                "confidence": {
+                    "city": 0.93,
+                    "date": 0.12,
+                    "guest_count": 0.97,
+                    "budget": 0.95,
+                    "style": 0.2,
+                    "events_count": 0.92
+                }
+            },
+            "missing_questions": [
+                "Exact city preference within NCR",
+                "Exact date",
+                "Indoor or outdoor priority",
+                "Catering requirements",
+                "Decor requirements"
+            ]
+        }
+    ]
+}
